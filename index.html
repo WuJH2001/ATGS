@@ -167,52 +167,87 @@
 
 
 
-  <div class="container" style="max-width: 1200px; margin: 80px auto 0 auto;">
-    <div class="has-text-centered">
-      <h2 class="title is-3">Long 360 Dataset (Large-Scale Motion, 1400 frames)</h2>
+<div class="container" style="max-width: 1200px; margin: 80px auto 0 auto;">
+  <div class="has-text-centered">
+    <h2 class="title is-3">Long 360 Dataset (Large-Scale Motion, 1400 frames)</h2>
 
-      <p class="mb-5" style="max-width: 800px; margin-left:200px">
+    <p class="mb-5" style="max-width: 800px; margin-left:200px">
 Our method demonstrates significantly superior modeling quality over previous approaches in long-sequence, large-motion scenarios.
-      </p>
+    </p>
 
-      <div class="container">
-        <div class="columns is-centered is-multiline">
+    <div class="container">
+      <div class="columns is-centered is-multiline">
 
-          <div class="column is-half has-text-centered">
-            <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
-              <source src="static/ourvideos/1400/oneBigGOP.mp4" type="video/mp4">
-            </video>
-            <p class="mt-2 has-text-weight-semibold">LocalDyGS (one Clip)</p>
-          </div>
-          <div class="column is-half has-text-centered">
-            <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
-              <source src="static/ourvideos/1400/smallGOPs.mp4" type="video/mp4">
-            </video>
-            <p class="mt-2 has-text-weight-semibold">LocalDyGS (140 Clips) flickering
-            </p>
-          </div>
-
-          <div class="column is-half has-text-centered">
-            <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
-              <source src="static/ourvideos/1400/4DGaussian.mp4" type="video/mp4">
-            </video>
-            <p class="mt-2 has-text-weight-semibold">4DGaussian (One Clip)</p>
-          </div>
-          <div class="column is-half has-text-centered">
-            <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
-              <source src="static/ourvideos/1400/vru_long360_fix.mp4" type="video/mp4">
-            </video>
-            <p class="mt-2 has-text-weight-semibold">Ours</p>
-          </div>
-
+        <div class="column is-half has-text-centered">
+          <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+            <source src="static/ourvideos/1400/oneBigGOP.mp4" type="video/mp4">
+          </video>
+          <p class="mt-2 has-text-weight-semibold">LocalDyGS (one Clip)</p>
         </div>
+        <div class="column is-half has-text-centered">
+          <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+            <source src="static/ourvideos/1400/smallGOPs.mp4" type="video/mp4">
+          </video>
+          <p class="mt-2 has-text-weight-semibold">LocalDyGS (140 Clips, flickering) 
+          </p>
+        </div>
+
+        <div class="column is-half has-text-centered">
+          <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+            <source src="static/ourvideos/1400/4DGaussian.mp4" type="video/mp4">
+          </video>
+          <p class="mt-2 has-text-weight-semibold">4DGaussian (One Clip)</p>
+        </div>
+        <div class="column is-half has-text-centered">
+          <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+            <source src="static/ourvideos/1400/vru_long360_fix.mp4" type="video/mp4">
+          </video>
+          <p class="mt-2 has-text-weight-semibold">Ours (One Clip, compressed per ECCV policy)</p>
+        </div>
+
       </div>
+    </div>
 
 
 
+  </div>
+</div>
+
+
+<div class="container" style="max-width: 1200px; margin: 80px auto 0 auto;">
+  <div class="has-text-centered">
+    <h2 class="title is-3">MeetRoom (Only 11 views)</h2>
+      <p class="mb-5">
+        Our method demonstrates impressive performance in the MeetRoom dataset, effectively capturing intricate details and dynamics.
+      </p>
+    <div class="container">
+      <div class="columns is-centered">
+
+        <div class="column is-one-third has-text-centered">
+          <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+            <source src="static/videos/meetroom_4dgs.mp4" type="video/mp4">
+          </video>
+          <p class="mt-2 has-text-weight-semibold">4DGaussian</p>
+        </div>
+
+        <div class="column is-one-third has-text-centered">
+          <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+            <source src="static/videos/meetroom_localdygs.mp4" type="video/mp4">
+          </video>
+          <p class="mt-2 has-text-weight-semibold">LocalDyGS</p>
+        </div>
+
+        <div class="column is-one-third has-text-centered">
+          <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+            <source src="static/videos/meetroom_discussion.mp4" type="video/mp4">
+          </video>
+          <p class="mt-2 has-text-weight-semibold">Ours</p>
+        </div>
+
+      </div>
     </div>
   </div>
-
+</div>
 
   
 <div class="container" style="max-width: 900px; margin: 80px auto 0 auto;">
@@ -268,14 +303,11 @@ Our method demonstrates significantly superior modeling quality over previous ap
     </div>
   </div>
 
-
-
-
 <div class="section-divider"></div>
 
 <div class="container" style="max-width: 1000px; margin: 60px auto 20px auto;">
   <div class="has-text-centered">
-    <h3 class="title is-4">Multi-View Long Videos</h3>
+    <h3 class="title is-4">SelfCap dataset (Multi-View Long Video)</h3>
   </div>
 </div>
 
@@ -283,7 +315,6 @@ Our method demonstrates significantly superior modeling quality over previous ap
   <video controls playsinline style="height:500px">
     <source src="static/videos/selfcap_bar.mp4" type="video/mp4" >
   </video>
-  <p>SelfCap dataset (Bar)</p>
 </div>
 
 <div class="container" style="max-width: 1000px; margin: 60px auto 20px auto;">
