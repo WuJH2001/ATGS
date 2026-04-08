@@ -17,7 +17,7 @@
   <sup>2</sup> Pengcheng Laboratory
 </p>
 
-<p align="center">
+<p id="top" align="center">
   [![arXiv](https://img.shields.io/badge/arXiv-2602.22693-b31b1b.svg)]()
   [![ProjectPage](https://img.shields.io/badge/%F0%9F%9A%80%20-Project%20Page-blue)](https://wujh2001.github.io/ATGS/)
   [![Youtube](https://img.shields.io/badge/▶️-Youtube-red)]()
