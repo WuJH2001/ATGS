@@ -19,10 +19,9 @@
 
 <div id="top" align="center">
 
-[![arXiv](https://img.shields.io/badge/arXiv-2602.22693-b31b1b.svg)](https://www.arxiv.org/abs/2601.22693)
-[![ProjectPage](https://img.shields.io/badge/%F0%9F%9A%80%20-Project%20Page-blue)](https://wujh2001.github.io/PEAR//)
-[![Youtube](https://img.shields.io/badge/▶️-Youtube-red)](https://www.youtube.com/watch?v=FFnuDwXGA_M)
-[![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Live_Demo-blue)](https://huggingface.co/spaces/BestWJH/PEAR)
+[![arXiv](https://img.shields.io/badge/arXiv-2602.22693-b31b1b.svg)]()
+[![ProjectPage](https://img.shields.io/badge/%F0%9F%9A%80%20-Project%20Page-blue)](https://wujh2001.github.io/ATGS//)
+[![Youtube](https://img.shields.io/badge/▶️-Youtube-red)]()
 </div>
 
 
