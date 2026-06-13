@@ -19,7 +19,7 @@
 
 <div id="top" align="center">
 
-[![arXiv](https://img.shields.io/badge/arXiv-2602.22693-b31b1b.svg)]()
+[![arXiv](https://img.shields.io/badge/arXiv-2602.22693-b31b1b.svg)](https://drive.google.com/file/d/1lRoi3-8B4lIjQSmGjS6nx0f9MLSQ5LGF/view?usp=sharing)
 [![ProjectPage](https://img.shields.io/badge/%F0%9F%9A%80%20-Project%20Page-blue)](https://wujh2001.github.io/ATGS//)
 [![Youtube](https://img.shields.io/badge/▶️-Youtube-red)]()
 </div>
