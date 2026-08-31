@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 cd "$(dirname "$0")/.."
 
-export CUDA_VISIBLE_DEVICES=3
+export CUDA_VISIBLE_DEVICES=4
 export bash_path="$(realpath "${BASH_SOURCE[0]}")"
 
 python train_long.py \
