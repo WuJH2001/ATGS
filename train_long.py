@@ -68,32 +68,6 @@ except ImportError:
 to8b = lambda x: (255 * np.clip(x.cpu().numpy(), 0, 1)).astype(np.uint8)
 
 
-def draw_img(img, path):
-    ldr = img.detach().cpu()
-    img_tan = ldr.reshape(-1)
-    plt.hist(np.array(img_tan), bins=50)
-    plt.xlabel('Max_value', fontsize=18)
-    plt.ylabel('Images', fontsize=18)
-    plt.xticks(fontsize=18)
-    plt.yticks(fontsize=18)
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.savefig(f"{path}.jpg", format='jpg')
-    plt.close()
-
-
-def show_depth(image, name):
-    depth_max = torch.max(image)
-    depth_min = torch.min(image)
-    image = (image - depth_min) / (depth_max - depth_min + 0.0001)
-    show_image = Image.fromarray(
-        np.transpose(np.array(image.tile(3, 1, 1).detach().clamp(0, 1).cpu() * 255).astype(np.uint8), (1, 2, 0)))
-    show_image.save(f'test_images/rgb_{name}.png')
-
-
-def show_image(image, name):
-    from torchvision.utils import save_image
-    save_image(image.detach().clamp(0, 1), f'test_images/rgb_{name}.jpg')
 
 
 def saveRuntimeCode(dst: str) -> None:
@@ -235,6 +209,7 @@ def step_accumulated_gradients(gaussians, opt, micro_count, encoder_visit_counts
         gaussians, float(opt.gradient_clip_norm), update_static=True
     )
 
+    # warmup factor is used to warmup the learning rate
     warmup_updates = max(int(opt.lr_warmup_updates), 0)
     start_factor = min(max(float(opt.lr_warmup_start_factor), 0.0), 1.0)
     next_update = optimizer_update["count"] + 1
@@ -413,17 +388,15 @@ def scene_reconstruction(dataset, hyper, opt, pipe, testing_iterations, saving_i
                 render_pkg["scaling"], render_pkg["neural_opacity"], render_pkg["neural_points"]
         gt_image = viewpoint_cam.original_image.cuda()
         Ll1 = l1_loss(image, gt_image)
-
         ssim_loss = (1.0 - ssim(image, gt_image)[0])
-
         scaling_reg = scaling.prod(dim=1).mean()
         # PIL 2 img
         psnr_ = psnr(image, gt_image).mean().double()
 
-        # for debug
+        # for debug, visualize the image every 100 iterations
         if iteration % 100 == 0:
-            os.makedirs(f"output/360_2/0_250/debug", exist_ok=True)
-            torchvision.utils.save_image(image, f"output/360_2/0_250/debug/iteration_{iteration}.jpg")
+            os.makedirs(f"{scene.model_path}debug", exist_ok=True)
+            torchvision.utils.save_image(image, f"{scene.model_path}debug/iteration_{iteration}.jpg")
         
         loss = (1.0 - opt.lambda_dssim) * Ll1 + opt.lambda_dssim * ssim_loss + 0.01 * scaling_reg
 
@@ -902,10 +875,6 @@ def load_env(args):
     from arguments.atgs_cfg import apply_atgs_cfg
     apply_atgs_cfg(args)
 
-
-def warm_up(lp, opt, pp, test_iterations, save_iterations, checkpoint_iterations, start_checkpoint, debug_from,
-            model_path, args):
-    pass
 
 
 if __name__ == "__main__":

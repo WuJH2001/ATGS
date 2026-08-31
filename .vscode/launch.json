@@ -11,7 +11,7 @@
             "justMyCode": false,
             "python": "/data1/wjh/env/scaffold/bin/python",
             "env": {
-                "CUDA_VISIBLE_DEVICES": "0",
+                "CUDA_VISIBLE_DEVICES": "3",
                 "bash_path": "${workspaceFolder}/scripts_1400/250_overlap/0_250.sh"
             },
             "args": [
@@ -19,7 +19,7 @@
                 "-m", "output/360_2/0_250/",
                 "--frames_start_end", "0", "250",
                 "--configs", "arguments/vrugz/basketball_plane.py",
-                "--base_path", "/data2/liangjie/dynamic/ATGS/data/360/250_points_enhanced.ply"
+                "--base_path", "data/360/250_points_enhanced.ply"
             ]
         },
         {
