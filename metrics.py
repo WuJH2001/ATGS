@@ -140,7 +140,7 @@ if __name__ == "__main__":
     # Set up command line argument parser
     parser = ArgumentParser(description="Training script parameters")
     parser.add_argument("--input_dir_path", type=str, required=True)
-    # example: /data2/liangjie/dynamic/ATGS/output/360_2/0_250/testall/ours_100000/renders
+    # example: ./output/360_2/0_250/testall/ours_100000/renders
 
     args = parser.parse_args(sys.argv[1:])
 
