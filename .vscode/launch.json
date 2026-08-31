@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ATGS: train 0_250 (two-stage)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train_long.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "python": "/data1/wjh/env/scaffold/bin/python",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "bash_path": "${workspaceFolder}/scripts_1400/250_overlap/0_250.sh"
+            },
+            "args": [
+                "-s", "/data2/dataset/longvideos/jpg/360_2/",
+                "-m", "output/360_2/0_250/",
+                "--frames_start_end", "0", "250",
+                "--configs", "arguments/vrugz/basketball_plane.py",
+                "--base_path", "/data2/liangjie/dynamic/ATGS/data/360/250_points_enhanced.ply"
+            ]
+        },
+        {
+            "name": "ATGS: metrics",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/metrics.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "python": "/data1/wjh/env/scaffold/bin/python",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "bash_path": "${workspaceFolder}/scripts_1400/250_overlap/0_250.sh"
+            },
+            "args": [
+                "--input_dir_path", "/data2/liangjie/dynamic/ATGS/output/360_2/0_250/testall/ours_100000/"
+            ]
+        }
+    ]
+}
