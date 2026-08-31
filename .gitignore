@@ -1,2 +1,6 @@
 output/
 data/
+static/
+__pycache__/
+*.pyc
+.vscode/
